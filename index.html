@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#f4f0e7" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%232f5443'/%3E%3Ctext x='50' y='66' font-size='44' text-anchor='middle' fill='%23f2e8d0' font-family='serif'%3E100%3C/text%3E%3C/svg%3E" />
+  <title>100年润发 · NICE TO MEET YOU | 3D 品牌数字快闪店</title>
+  <meta name="description" content="100年润发 NICE TO MEET YOU 3D 品牌数字快闪店。不惧油，自在见。" />
+</head>
+<body>
+  <div id="app">
+    <canvas id="scene" aria-label="100年润发 NICE TO MEET YOU 3D 品牌快闪店"></canvas>
+    <div class="scene-wash" aria-hidden="true"></div>
+
+    <section class="floor-view" id="floorView" aria-hidden="true">
+      <img class="floor-view-image" id="floorViewImage" src="/assets/floor-1.jpg" alt="一楼鸟瞰空间" />
+      <div class="floor-view-shade"></div>
+      <div class="floor-view-label">
+        <span class="floor-view-num" id="floorViewNum">FLOOR 01</span>
+        <h2 id="floorViewTitle">MEET YOUR FRESHNESS</h2>
+        <p id="floorViewSub">AERIAL VIEW · 清爽相遇</p>
+        <div class="floor-view-tags" id="floorViewTags"></div>
+      </div>
+      <div class="floor-view-hint">点击右侧空间节点，打开专题页</div>
+    </section>
+
+    <header class="masthead">
+      <a class="brand-lockup" href="#" aria-label="100年润发首页">
+        <span class="brand-cn">100年润发</span>
+        <span class="brand-en">CENTAINE</span>
+      </a>
+      <div class="brand-campaign">
+        <span class="campaign-small">NICE TO MEET YOU</span>
+        <span class="campaign-slogan">不惧油，自在见。</span>
+      </div>
+      <p class="brand-sub">一场关于清爽、友谊与自我的相遇。</p>
+    </header>
+
+    <div class="edition-mark">
+      <span>BRAND EXPERIENCE</span>
+      <span class="edition-line"></span>
+      <span>3D DIGITAL SPACE</span>
+    </div>
+
+    <div class="scene-caption">
+      <span class="caption-index">CN / 001</span>
+      <span class="caption-title">100年润发 · 城市会客厅</span>
+      <span class="caption-en">A PLACE TO MEET FRESHNESS</span>
+    </div>
+
+    <aside class="floor-panel" id="floorPanel" aria-label="楼层空间索引">
+      <div class="panel-top">
+        <span class="panel-eyebrow">SPACE INDEX</span>
+        <span class="panel-count">12 MOMENTS</span>
+      </div>
+      <div class="floor-tabs" role="tablist" aria-label="空间选择">
+        <button class="floor-tab is-active" role="tab" aria-selected="true" aria-controls="floorPanelBody" data-mode="exterior">
+          <span class="floor-number">00</span>
+          <span class="floor-tab-copy"><b>外观</b><small>EXTERIOR</small></span>
+        </button>
+        <button class="floor-tab" role="tab" aria-selected="false" aria-controls="floorPanelBody" data-mode="f1">
+          <span class="floor-number">01</span>
+          <span class="floor-tab-copy"><b>一楼</b><small>FRESHNESS</small></span>
+        </button>
+        <button class="floor-tab" role="tab" aria-selected="false" aria-controls="floorPanelBody" data-mode="f2">
+          <span class="floor-number">02</span>
+          <span class="floor-tab-copy"><b>二楼</b><small>FRIENDS &amp; SELF</small></span>
+        </button>
+      </div>
+      <div class="panel-body" id="floorPanelBody">
+      <div class="exterior-index" id="exteriorIndex">
+        <span class="exterior-kicker">A CITY LIVING ROOM</span>
+        <h2>从街角开始，<br>走进这场相遇。</h2>
+        <p>点击楼层，进入独立的室内鸟瞰空间。光影、橱窗与陈列会成为你的背景。</p>
+        <button class="exterior-floor" data-goto="f1">
+          <span class="exterior-thumb"><img src="/assets/floor-1.jpg" alt="一楼鸟瞰缩略图" /></span>
+          <span class="exterior-floor-copy"><small>FLOOR 01</small><b>一楼 · 清爽相遇</b><em>MEET YOUR FRESHNESS →</em></span>
+        </button>
+        <button class="exterior-floor" data-goto="f2">
+          <span class="exterior-thumb"><img src="/assets/floor-2.jpg" alt="二楼鸟瞰缩略图" /></span>
+          <span class="exterior-floor-copy"><small>FLOOR 02</small><b>二楼 · 好友与自我</b><em>MEET YOUR FRIENDS &amp; YOURSELF →</em></span>
+        </button>
+        <span class="exterior-note">12 SPACES · NICE TO MEET YOU</span>
+      </div>
+      <div class="floor-heading">
+        <div>
+          <p class="floor-kicker">FLOOR 01</p>
+          <h2 class="floor-title">MEET YOUR<br />FRESHNESS</h2>
+        </div>
+        <span class="floor-cn">清爽相遇</span>
+      </div>
+      <div class="floor-list" id="floorList" role="tabpanel" aria-live="polite"></div>
+      </div>
+      <div class="panel-foot">
+        <span class="pulse-dot"></span>
+        <span>点击节点，打开相遇空间</span>
+      </div>
+    </aside>
+
+    <div class="scene-tools">
+      <button class="tool-btn" id="resetView" title="重置视角" aria-label="重置视角">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="12" r="3.2" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+        <span>RESET VIEW</span>
+      </button>
+      <div class="drag-hint" aria-hidden="true"><span class="drag-line"></span>拖动 · 微调视角</div>
+    </div>
+
+    <div class="bottom-note">
+      <span>点击空间节点，开启你的相遇之旅。</span>
+      <span class="bottom-coord">31°14′N · 121°28′E&nbsp;&nbsp;/&nbsp;&nbsp;DAYLIGHT</span>
+    </div>
+
+    <div class="scene-tooltip" id="sceneTooltip" role="status" aria-hidden="true">
+      <span class="tooltip-num"></span><span class="tooltip-name"></span>
+    </div>
+
+    <div class="loading-screen" id="loadingScreen" aria-live="polite">
+      <div class="loader-inner">
+        <img class="loader-logo" src="/assets/logo-ink.png" alt="100年润发" />
+        <p class="loader-en">NICE TO MEET YOU</p>
+        <div class="loader-track"><span id="loaderBar"></span></div>
+        <p class="loader-copy">正在布置相遇现场 <span id="loaderPct">0%</span></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-shell" id="modalShell" aria-hidden="true">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <article class="story-modal" id="storyModal" role="dialog" aria-modal="true" aria-labelledby="storyTitle" tabindex="-1">
+      <div class="modal-chrome">
+        <div class="modal-locator" id="modalLocator"></div>
+        <button class="modal-close" id="modalClose" aria-label="关闭内容页">
+          <span>CLOSE</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div class="modal-scroll" id="modalScroll">
+        <div id="storyContent"></div>
+      </div>
+      <nav class="story-nav" id="storyNav" aria-label="同层节点切换">
+        <button class="story-prev" id="storyPrev"><span>←</span><em>PREV</em></button>
+        <span class="story-progress" id="storyProgress">01 / 06</span>
+        <button class="story-next" id="storyNext"><em>NEXT</em><span>→</span></button>
+      </nav>
+    </article>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
